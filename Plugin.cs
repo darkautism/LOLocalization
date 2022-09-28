@@ -13,6 +13,8 @@ namespace LOLocalizationTC
     public class Plugin : BasePlugin
     {
         internal new static ManualLogSource Log;
+        public static int langindex = 4;
+        public static string langtext = "tc";
         public override void Load()
         {
             Log = base.Log;
@@ -29,7 +31,7 @@ namespace LOLocalizationTC
         {
             Plugin.Log.LogInfo($"LoadTextAsset: {name} {bundleName}");
             if (name == "Table_Localization_ja")
-                name = "Table_Localization_tc";
+                name = "Table_Localization_"+Plugin.langtext;
         }
     }
 
@@ -39,8 +41,7 @@ namespace LOLocalizationTC
     {
         static void Prefix(ref BetterList<string> newValues, Il2CppStringArray newLanguages, Dictionary<string, int> languageIndices)
         {
-
-            //LAOPLUS.Log.LogInfo($"AddCSV: {newValues} {newLanguages}");
+            int langindex = 3;
             System.Text.StringBuilder sb = new System.Text.StringBuilder();
             for (int i = 0; i < newValues.size; i++)
                 sb.Append(newValues[i]);
@@ -51,10 +52,10 @@ namespace LOLocalizationTC
                     sb.Append(newLanguages[i]);
             }
             Plugin.Log.LogDebug($"AddCSV({ newValues.size}): {sb}");
-            if (newValues.size >= 6 && newValues[4] != null && newValues[4].Trim().Length != 0)
+            if (newValues.size >= 6 && newValues[Plugin.langindex] != null && newValues[Plugin.langindex].Trim().Length != 0)
             {
-                newValues[1] = newValues[4];
-                newValues[2] = newValues[4];
+                newValues[1] = newValues[Plugin.langindex];
+                newValues[2] = newValues[Plugin.langindex];
             }
         }
     }
