@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32802.440
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LOLocalizationTC", "LOLocalizationTC.csproj", "{14E9583A-D3B2-4AA2-AFBF-3E97B2ED6C69}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LOLocalization", "LOLocalization.csproj", "{14E9583A-D3B2-4AA2-AFBF-3E97B2ED6C69}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

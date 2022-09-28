@@ -7,7 +7,7 @@ using System.Reflection;
 using UnhollowerBaseLib;
 using UnityEngine;
 
-namespace LOLocalizationTC
+namespace LOLocalization
 {
     [BepInPlugin(MyPluginInfo.PLUGIN_GUID, MyPluginInfo.PLUGIN_NAME, MyPluginInfo.PLUGIN_VERSION)]
     public class Plugin : BasePlugin
