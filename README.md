@@ -1,6 +1,6 @@
 # LastOrigin Localization Mod
 
-This project is a LastOrigin Localization Mod. It can change your LastOrigin to Chinese Trandictional.
+This project is a LastOrigin Localization Mod. It can change your LastOrigin to Chinese Trandictional or English.
 
 ## Install guide
 
