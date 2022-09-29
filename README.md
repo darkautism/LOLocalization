@@ -12,3 +12,8 @@ This project is a LastOrigin Localization Mod. It can change your LastOrigin to 
 
 ![EN](images/EN.PNG)
 ![TC](images/TC.PNG)
+
+## Fixed text sometimes display show slim bugs.
+![pic1](https://i.imgur.com/oppmLZP.png)
+![pic2](https://i.imgur.com/3GFLSK5.png)
+![pic3](https://i.imgur.com/cbnaagn.png)

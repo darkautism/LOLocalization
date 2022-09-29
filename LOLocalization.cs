@@ -45,7 +45,6 @@ namespace LOLocalization
         [HarmonyPrefix, HarmonyPatch(typeof(ResourceManager), nameof(ResourceManager.LoadTextAsset))]
         static void LoadTextAssetPatch(TextAsset __result, ref string name, string bundleName = "")
         {
-            Log.LogInfo($"LoadTextAsset: {name} {bundleName}");
             if (name == "Table_Localization_ja")
                 name = "Table_Localization_" + LOLocalization.langtext;
         }
