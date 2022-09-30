@@ -43,7 +43,16 @@ You can co-editing these sheets to help us.
 ![EN](images/EN.PNG)
 ![TC](images/TC.PNG)
 
-## Fixed text sometimes display show slim bugs.
-![pic1](https://i.imgur.com/oppmLZP.png)
-![pic2](https://i.imgur.com/3GFLSK5.png)
-![pic3](https://i.imgur.com/cbnaagn.png)
+## Fixed some bugs.
+
+### Text slim bugs:
+![Orig](https://i.imgur.com/eFOduac.png)
+![Changed](https://i.imgur.com/9GJA3O0.png)
+
+### ERROR#0 Bug:
+![Orig](https://i.imgur.com/zGoTVEW.png)
+![Changed](https://i.imgur.com/7JZq2ee.png)
+
+### Translation bugs
+![Orig](https://i.imgur.com/nmix9kx.png)
+![Changed](https://i.imgur.com/at7nVEG.png)
