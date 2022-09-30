@@ -4,7 +4,7 @@
     <TargetFramework>netstandard2.1</TargetFramework>
     <AssemblyName>LOLocalization</AssemblyName>
     <Description>LastOrigin Localization Changer</Description>
-    <Version>1.0.3</Version>
+    <Version>1.1.0</Version>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <LangVersion>latest</LangVersion>
     <RestoreAdditionalProjectSources>
@@ -20,13 +20,19 @@
 
   <ItemGroup>
     <PackageReference Include="BepInEx.IL2CPP" Version="6.0.0-*" IncludeAssets="compile" />
-    <PackageReference Include="BepInEx.PluginInfoProps" Version="2.*" />
-    <PackageReference Include="LastOrigin.GameLibs" Version="*-*" />
+    <PackageReference Include="BepInEx.PluginInfoProps" Version="2.*" IncludeAssets="build" />
+	  <PackageReference Include="LastOrigin.GameLibs" Version="*-*" IncludeAssets="build" />
+	  <PackageReference Include="CsvHelper" Version="28.0.1" GeneratePathProperty="true" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Localization\font">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <None Update="Localization\fonts">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+	  <None Include="$(PkgCsvHelper)\lib\netstandard2.1\CsvHelper.dll" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="curl -L -o $(TargetDir)/Localization/localization_tc.csv &quot;https://docs.google.com/spreadsheets/d/16uL75K1GSrHEx_lGUx1GHTlG6KKhaaxMgGsvUqi6fss/gviz/tq?tqx=out:csv&amp;sheet=TC&amp;range=A2:B&quot;&#xD;&#xA;curl -L -o $(TargetDir)/Localization/localization_en.csv &quot;https://docs.google.com/spreadsheets/d/16uL75K1GSrHEx_lGUx1GHTlG6KKhaaxMgGsvUqi6fss/gviz/tq?tqx=out:csv&amp;sheet=EN&amp;range=A2:B&quot;" />
+  </Target>
 </Project>
