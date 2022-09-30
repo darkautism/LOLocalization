@@ -33,10 +33,10 @@ font = sourcehansans
 
 ## Community Translation
 
-You can co-editing [this sheet](https://docs.google.com/spreadsheets/d/16uL75K1GSrHEx_lGUx1GHTlG6KKhaaxMgGsvUqi6fss/edit#gid=0) to help us.
+You can co-editing these sheets to help us.
 
-[TC](https://docs.google.com/spreadsheets/d/16uL75K1GSrHEx_lGUx1GHTlG6KKhaaxMgGsvUqi6fss/edit#gid=888841601)
-[EN](https://docs.google.com/spreadsheets/d/16uL75K1GSrHEx_lGUx1GHTlG6KKhaaxMgGsvUqi6fss/edit#gid=1714781629)
+[UI](https://docs.google.com/spreadsheets/d/16uL75K1GSrHEx_lGUx1GHTlG6KKhaaxMgGsvUqi6fss/edit#gid=0)
+[Text](https://docs.google.com/spreadsheets/d/1Ck3LS2bIOPI_aanuikXzgXleSRqMqg9H27mZTVnqBdY)
 
 ## Example
 
