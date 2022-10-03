@@ -33,6 +33,6 @@
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="curl -L -o $(TargetDir)/Localization/localization_tc.csv &quot;https://docs.google.com/spreadsheets/d/16uL75K1GSrHEx_lGUx1GHTlG6KKhaaxMgGsvUqi6fss/gviz/tq?tqx=out:csv&amp;sheet=TC&amp;range=A2:B&quot;&#xD;&#xA;curl -L -o $(TargetDir)/Localization/localization_en.csv &quot;https://docs.google.com/spreadsheets/d/16uL75K1GSrHEx_lGUx1GHTlG6KKhaaxMgGsvUqi6fss/gviz/tq?tqx=out:csv&amp;sheet=EN&amp;range=A2:B&quot;" />
+    <Exec Command="curl -L -o $(TargetDir)/Localization/localization_tc.csv &quot;https://docs.google.com/spreadsheets/d/16uL75K1GSrHEx_lGUx1GHTlG6KKhaaxMgGsvUqi6fss/gviz/tq?tqx=out:csv&amp;sheet=TC&amp;range=A2:B&quot;&#xD;&#xA;curl -L -o $(TargetDir)/Localization/localization_en.csv &quot;https://docs.google.com/spreadsheets/d/16uL75K1GSrHEx_lGUx1GHTlG6KKhaaxMgGsvUqi6fss/gviz/tq?tqx=out:csv&amp;sheet=EN&amp;range=A2:B&quot;&#xD;&#xA;curl -L -o $(TargetDir)/Localization/table_localization_tc.csv &quot;https://docs.google.com/spreadsheets/d/1Ck3LS2bIOPI_aanuikXzgXleSRqMqg9H27mZTVnqBdY/gviz/tq?tqx=out:csv&amp;sheet=TC&amp;range=A2:B&quot;&#xD;&#xA;curl -L -o $(TargetDir)/Localization/table_localization_en.csv &quot;https://docs.google.com/spreadsheets/d/1Ck3LS2bIOPI_aanuikXzgXleSRqMqg9H27mZTVnqBdY/gviz/tq?tqx=out:csv&amp;sheet=EN&amp;range=A2:B&quot;" />
   </Target>
 </Project>

@@ -24,6 +24,7 @@ namespace LOLocalization
         public static string langtext = "tc";
 
         public static System.Collections.Generic.Dictionary<string, System.Collections.Generic.Dictionary<string, string>> communityLocalizationPatch = null;
+        public static System.Collections.Generic.Dictionary<string, System.Collections.Generic.Dictionary<string, string>> communityTable_LocalizationPatch = null;
         public static System.Collections.Generic.Dictionary<string, Font> fonts = null;
 
         private static ConfigEntry<string> configLanguage;
@@ -35,8 +36,11 @@ namespace LOLocalization
             Inst = this;
             Log = base.Log;
             communityLocalizationPatch = new System.Collections.Generic.Dictionary<string, System.Collections.Generic.Dictionary<string, string>>();
-            communityLocalizationPatch.Add("tc",LoadLocalization("tc"));
-            communityLocalizationPatch.Add("en", LoadLocalization("en"));
+            communityLocalizationPatch.Add("tc",LoadLocalization("localization_tc"));
+            communityLocalizationPatch.Add("en", LoadLocalization("localization_en"));
+            communityTable_LocalizationPatch = new System.Collections.Generic.Dictionary<string, System.Collections.Generic.Dictionary<string, string>>();
+            communityTable_LocalizationPatch.Add("en", LoadLocalization("table_localization_en"));
+            communityTable_LocalizationPatch.Add("tc", LoadLocalization("table_localization_tc"));
 
             configLanguage = Config.Bind("General","language","tc","Accept tc,en");
             configFont = Config.Bind("General", "font", "sourcehansans", "Accept sourcehansans,msjhbd");
@@ -57,7 +61,7 @@ namespace LOLocalization
 
         System.Collections.Generic.Dictionary<string, string> LoadLocalization(string lang) {
             System.Collections.Generic.Dictionary<string, string>  ret = new System.Collections.Generic.Dictionary<string, string>();
-            string path = $"{Paths.PluginPath}/Localization/localization_{lang}.csv";
+            string path = $"{Paths.PluginPath}/Localization/{lang}.csv";
             if (File.Exists(path))
             {
                 try
@@ -148,6 +152,19 @@ namespace LOLocalization
             if (communityLocalizationPatch.ContainsKey(configLanguage.Value) &&
                 communityLocalizationPatch[configLanguage.Value].ContainsKey(key)) {
                 __result = communityLocalizationPatch[configLanguage.Value][key];
+                return false;
+            }
+            return true;
+        }
+
+
+        [HarmonyPrefix, HarmonyPatch(typeof(DataManager), nameof(DataManager.GetLocalization))]
+        static bool GetLocalizationPatch(ref string __result, string key)
+        {
+            if (communityTable_LocalizationPatch.ContainsKey(configLanguage.Value) &&
+                communityTable_LocalizationPatch[configLanguage.Value].ContainsKey(key))
+            {
+                __result = communityTable_LocalizationPatch[configLanguage.Value][key].Replace("&n", "\n");
                 return false;
             }
             return true;
