@@ -78,7 +78,7 @@ namespace LOLocalization
                         {
                             string key = csv.GetField(0);
                             string value = csv.GetField(1);
-                            Log.LogInfo($"'{key} {value}'");
+                            //Log.LogInfo($"'{key} {value}'");
                             ret[key] = value;
                         }
                     }
@@ -158,7 +158,7 @@ namespace LOLocalization
         }
 
 
-        [HarmonyPrefix, HarmonyPatch(typeof(DataManager), nameof(DataManager.GetLocalization))]
+        [HarmonyPrefix, HarmonyPatch(typeof(DataManager), nameof(DataManager.GetLocalizationTable))]
         static bool GetLocalizationPatch(ref string __result, string key)
         {
             if (communityTable_LocalizationPatch.ContainsKey(configLanguage.Value) &&
