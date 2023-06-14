@@ -117,14 +117,14 @@ namespace LOLocalization
                 __result = replaceFont;
             }
         }
-
+        /*
         [HarmonyPrefix, HarmonyPatch(typeof(ResourceManager), nameof(ResourceManager.LoadTextAsset))]
         static void LoadTextAssetPatch(TextAsset __result, ref string name, string bundleName = "")
         {
             if (name == "Table_Localization_ja")
                 name = "Table_Localization_" + langtext;
-        }
-
+        }*/
+        /*
         [HarmonyPrefix, HarmonyPatch(typeof(Localization), nameof(Localization.AddCSV))]
         static void AddCSVPatch(ref BetterList<string> newValues, Il2CppStringArray newLanguages, Dictionary<string, int> languageIndices)
         {
@@ -143,14 +143,17 @@ namespace LOLocalization
                 newValues[1] = newValues[langindex];
                 newValues[2] = newValues[langindex];
             }
-        }
+        }*/
 
 
         [HarmonyPrefix, HarmonyPatch(typeof(Localization), nameof(Localization.Get))]
         static bool GetPatch(ref string __result, string key, bool warnIfMissing = true)
         {
             if (communityLocalizationPatch.ContainsKey(configLanguage.Value) &&
-                communityLocalizationPatch[configLanguage.Value].ContainsKey(key)) {
+                communityLocalizationPatch[configLanguage.Value].ContainsKey(key) &&
+                !String.IsNullOrEmpty(communityLocalizationPatch[configLanguage.Value][key])) 
+            {
+
                 __result = communityLocalizationPatch[configLanguage.Value][key];
                 return false;
             }
@@ -162,8 +165,10 @@ namespace LOLocalization
         static bool GetLocalizationPatch(ref string __result, string key)
         {
             if (communityTable_LocalizationPatch.ContainsKey(configLanguage.Value) &&
-                communityTable_LocalizationPatch[configLanguage.Value].ContainsKey(key))
+                communityTable_LocalizationPatch[configLanguage.Value].ContainsKey(key) &&
+                !String.IsNullOrEmpty(communityTable_LocalizationPatch[configLanguage.Value][key]))
             {
+                //Log.LogInfo($"'{communityTable_LocalizationPatch[configLanguage.Value][key]}'");
                 __result = communityTable_LocalizationPatch[configLanguage.Value][key].Replace("&n", "\n");
                 return false;
             }
