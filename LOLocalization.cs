@@ -1,6 +1,5 @@
 ﻿using BepInEx;
 using BepInEx.Configuration;
-using BepInEx.IL2CPP;
 using BepInEx.Logging;
 using CsvHelper;
 using CsvHelper.Configuration;
@@ -10,8 +9,9 @@ using System;
 using System.Globalization;
 using System.IO;
 using System.Linq;
-using UnhollowerBaseLib;
 using UnityEngine;
+using BepInEx.Unity.IL2CPP;
+using Il2CppInterop.Runtime.InteropTypes.Arrays;
 
 namespace LOLocalization
 {
