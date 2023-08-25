@@ -4,13 +4,14 @@
     <TargetFramework>net6.0</TargetFramework>
     <AssemblyName>LOLocalization</AssemblyName>
     <Description>LastOrigin Localization Changer</Description>
-    <Version>1.3.0</Version>
+    <Version>1.3.1</Version>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <LangVersion>latest</LangVersion>
     <RestoreAdditionalProjectSources>
 		https://api.nuget.org/v3/index.json;
 		https://nuget.bepinex.dev/v3/index.json;
-		https://nuget.samboy.dev/v3/index.json
+		https://nuget.samboy.dev/v3/index.json;
+    https://nuget.bepinex.dev/v3/index.json
 	</RestoreAdditionalProjectSources>
     <RootNamespace>LOLocalization</RootNamespace>
     <Copyright>Kautism</Copyright>
@@ -23,10 +24,7 @@
 	  <PackageReference Include="BepInEx.Unity.IL2CPP" Version="6.0.0-be.*" IncludeAssets="compile" />
 	  <PackageReference Include="BepInEx.PluginInfoProps" Version="2.*" />
 	  <PackageReference Include="CsvHelper" Version="*" GeneratePathProperty="true" />
-	  <PackageReference Include="LastOrigin.GameLibs" Version="2.3.22" />
-    <Reference Include="LastOrigin">
-      <HintPath>lib\Assembly-CSharp.dll</HintPath>
-    </Reference>
+	  <PackageReference Include="LastOrigin.GameLibs" Version="2.3.22-r.0" />
   </ItemGroup>
 
   <ItemGroup>
